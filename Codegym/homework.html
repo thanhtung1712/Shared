@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Câu 7</h3>
+    <div>
+        <input type="text" name="" id="input">
+        <button onclick="cau7()">Hiển Thị</button>
+        <p id="output"></p>
+    </div>
+    <div>
+        <h3>Câu 8</h3>
+        <input type="text" name="" id="input1">
+        <button onclick="cau8()">In ra bình phương</button>
+        <p id="output1"></p>
+    </div>
+    <div>
+        <h3>Câu 9</h3>
+        <h1 id="output2"></h1>
+        <input type="text" name="" id="input2">
+        <button onclick="cau9()">In ra tên</button>
+
+    </div>
+    <div>
+        <h3>Câu 10</h3>
+        <input type="text" name="" id="input3">
+        <button onclick="cau10()">In ra nguồn ảnh</button>
+        <p id="output3"></p>
+    </div>
+    
+        <table>
+            <h3>Câu 11</h3>
+            <h4>Nhập a</h4>
+            <tr>
+                <input type="text" name="" id="a">
+            </tr>
+            <h4>Nhập b</h4>
+            <input type="text" name="" id="b">
+            <h4>Nhập c</h4>
+            <input type="text" name="" id="c">
+            <br>
+            
+                <button onclick="cau11()">Check xem có phải tam giác</button>
+                <td id="output4"></td>
+            
+        </table>
+        <div>
+            <h3>Câu 12</h3>
+            <h4>Nhập lần lượt a và b</h4>
+            <input type="text" name="" id="a1">
+            <input type="text" name="" id="b1">
+            <button onclick="cau12()">Tính tổng từ a cho đến b</button>
+            <p id="output5"></p>
+        </div>
+        <div>
+            <h3>Câu 13</h3>
+            <h4>Nhập lần lượt a và b</h4>
+            <input type="text" name="" id="a2">
+            <input type="text" name="" id="b2">
+            <button onclick="cau13()">Giải Phương Trình</button>
+        </div>
+        <div>
+            <h3>Câu 14</h3>
+            <h4>Nhập thời gian gửi</h4>
+            <input type="text" name="" id="time">
+            <button onclick="cau14()">Tính số tiền cần trả</button>
+            <p id="kq"></p>m1
+        </div>
+        <div>
+            <h3>Câu 15</h3>
+            <h4>Nhập số điện tiêu thụ</h4>
+            <input type="text" name="" id="sodien">
+            <button onclick="cau15()">Tính số tiền cần trả</button>
+            <p id="kq1"></p>
+        </div>
+    
+
+   <script>
+    function cau7(){
+
+    
+    let input = document.getElementById('input').value;
+    document.getElementById('output').innerHTML = 'gia tri da nhap la ' + input
+    }
+    function cau8() {
+        let input1 = document.getElementById('input1').value;
+        document.getElementById('output1').innerHTML = 'bình phương giá trị nhập là ' + (input1 * input1)
+    }
+    function cau9() {
+        let input2 = document.getElementById('input2').value;
+        document.getElementById('output2').innerHTML = 'tên nhập vào là ' + input2
+    }
+    function cau10() {
+        let input3 = document.getElementById('input3').value;
+        document.getElementById("output3").innerHTML = 'Link ảnh là : ' + input3
+        
+    }
+    function cau11() {
+        let a = document.getElementById('a').value;
+        let b = document.getElementById('b').value;
+        let c = document.getElementById('c').value;
+        if (a>0&&b>0&&c>0) {
+            document.getElementById('output4').innerHTML = 'Đây là 3 cạnh của 1 tam giác'
+            
+        } else {
+            document.getElementById('output4').innerHTML = 'Đây không phải 3 cạnh của 1 tam giác'
+        }
+m           
+
+    }
+    function cau12() {
+        let a1 = parseInt(document.getElementById('a1').value);
+        let b1 = parseInt(document.getElementById('b1').value);
+        let sum = 0;
+        for (let i = a1;i<=b1;i++) {
+             sum = sum + i;
+        }
+        document.getElementById('output5').innerText = "Giá trị tổng từ " + a1 +' đến ' + b1 +' là :' + sum
+
+    }
+    function cau13() {
+         let a2 = parseFloat(document.getElementById('a2').value);
+         let b2 = parseFloat(document.getElementById('b2').value);
+         let c = -b2/a2
+         let ketqua = document.getElementById('output5');
+         ketqua.innerText = 'Kết qủa phương trình ax +b = 0 ' + ' với a = '+ a2 + ' b= ' +b2 + ' là : '+ c
+    }
+    function cau14() {
+          let time = parseFloat(document.getElementById('time').value);
+          let moneyof1h;
+          
+          if(time<2){
+            moneyof1h = 3;
+          }
+          else if(time>=2&&time<=5){
+            moneyof1h = 5;
+
+          }
+          else {
+            moneyof1h = 7;
+          }
+          let money = time * moneyof1h
+    document.getElementById('kq').innerHTML = 'Số tiền gửi xe cần trả là : ' + money + '.000 VND'
+    }
+
+    function cau15() {
+          let sodien = parseFloat(document.getElementById('sodien').value);
+          let tien1sodien;
+          
+          if(sodien>=1&& sodien<=99){
+            tien1sodien = 1800;
+          }
+          else{
+            tien1sodien = 2000;
+          }
+
+          let money1 = sodien * tien1sodien
+    document.getElementById('kq1').innerHTML = 'Số tiền Điện cần trả là : ' + money1
+    }
+
+
+   </script>
+    
+</body>
+</html>
