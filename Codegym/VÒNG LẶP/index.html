@@ -6,17 +6,22 @@
     <title>Document</title>
 </head>
 <body>
+    <h1 id="ip1"></h1>
+    <h2 id="ip2"></h2>
     <script>
+        
         let a = +prompt("nhap a");
         let b = +prompt("nhap b");
-        let dem = a;
-        while(dem<=b){
-            if(dem%2==0){
-                document.write(dem + "\n");
-            
+        for (let i = a; i <=b; i++) {
+            if(i % 2 == 0){
+            document.write("<h1>" + i + "</h1>");
             }
-            dem++;
+            else{
+                document.write("<h2>" + i + "</h2>");
+            }
+            
         }
+        
         </script>
 </body>
 </html>
