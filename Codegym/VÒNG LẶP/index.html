@@ -44,16 +44,24 @@
         }
         document.getElementById('output').innerHTML = 'Tổng các số chia hết cho 3 và lớn hơn 2 là ' + c1 + ' và số số hạng chia hết cho 3 là ' + d
         }
-        function cau3{
+        function cau3(){
             let x= document.getElementById('nhapx').value;
-            let y = 
+            
             if(x<=1){
                 document.getElementById('output').innerHTML = x + ' không là số nguyên tố '
             }
             if (x==2||x==3){
                 document.getElementById('output').innerHTML = x + ' là số nguyên tố '
             }
-            if (x)
+            if (x>=5){
+             if(x%2==0||x%3==0||x%4==0||x%5==0||x%6==0||x%7==0||x%8==0||x%9==0){
+                document.getElementById('output').innerHTML = x + ' không là số nguyên tố '
+
+             }
+             else{
+                document.getElementById('output').innerHTML = x + ' là số nguyên tố '
+             }
+            }
         }
     </script>
 </body>
