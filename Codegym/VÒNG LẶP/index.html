@@ -6,10 +6,15 @@
     <title>Document</title>
 </head>
 <body>
+    <h3>Nhập a</h3>
     <input type="text" name="" id="ip1">
+    <h3>Nhập b</h3>
     <input type="text" name="" id="ip2">
+    <h3>Nhập x</h3>
+    <input type="text" name="" id="nhapx">
     <button onclick="cau1()">Tính Tích Các Số Chẵn Trong Khoảng a đến b</button>
     <button onclick="cau2()">Tính tổng các số chia hết cho 3 và lớn hơn 2</button>
+    <button onclick="cau3()">Kiểm tra x</button>
     <p id="output"></p>
     <script>
         function cau1(){
@@ -37,9 +42,19 @@
                 
             }
         }
-        document.getElementById('output').innerHTML = 'Tổng các số chia hết cho 3 và lớn hơn 2 là ' + c1 + 'và số số hạng chia hết cho 3 là ' + d
+        document.getElementById('output').innerHTML = 'Tổng các số chia hết cho 3 và lớn hơn 2 là ' + c1 + ' và số số hạng chia hết cho 3 là ' + d
         }
-        
+        function cau3{
+            let x= document.getElementById('nhapx').value;
+            let y = 
+            if(x<=1){
+                document.getElementById('output').innerHTML = x + ' không là số nguyên tố '
+            }
+            if (x==2||x==3){
+                document.getElementById('output').innerHTML = x + ' là số nguyên tố '
+            }
+            if (x)
+        }
     </script>
 </body>
 </html>
