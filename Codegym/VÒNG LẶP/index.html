@@ -6,22 +6,40 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="ip1"></h1>
-    <h2 id="ip2"></h2>
+    <input type="text" name="" id="ip1">
+    <input type="text" name="" id="ip2">
+    <button onclick="cau1()">Tính Tích Các Số Chẵn Trong Khoảng a đến b</button>
+    <button onclick="cau2()">Tính tổng các số chia hết cho 3 và lớn hơn 2</button>
+    <p id="output"></p>
     <script>
-        
-        let a = +prompt("nhap a");
-        let b = +prompt("nhap b");
-        for (let i = a; i <=b; i++) {
-            if(i % 2 == 0){
-            document.write("<h1>" + i + "</h1>");
+        function cau1(){
+            let a = parseInt(document.getElementById('ip1').value);
+        let b = parseInt(document.getElementById('ip2').value);
+        let c = 1;
+        for(let i=a ; i<=b;i++){
+            if(i%2==0){
+                c *= i;
+                
             }
-            else{
-                document.write("<h2>" + i + "</h2>");
-            }
+        }
+        document.getElementById('output').innerHTML = 'Tích các số chẵn trong khoảng đã nhập là ' + c 
+        }
+        function cau2(){
             
+            let a1 = parseInt(document.getElementById('ip1').value);
+        let b1 = parseInt(document.getElementById('ip2').value);
+        let c1 = 0;
+        let d = 0
+        for(let u=a1 ; u<=b1;u++){
+            if(u%3==0&&u>2){
+                c1 += u;
+                d++;
+                
+            }
+        }
+        document.getElementById('output').innerHTML = 'Tổng các số chia hết cho 3 và lớn hơn 2 là ' + c1 + 'và số số hạng chia hết cho 3 là ' + d
         }
         
-        </script>
+    </script>
 </body>
 </html>
