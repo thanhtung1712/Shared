@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = {
+            name : 'A',
+            score : 8,
+            Rate : 'Khá'
+            
+        }
+        let b = {
+            name : 'B',
+            score : 9,
+            Rate : 'Giỏi'
+        }
+         class Student {
+            constructor(name,age,score){
+                this.name = name;
+                this.age = age ;
+                this.score = score ;
+
+
+            }
+            f2() {
+                alert(this.name + ',' + this.age + ',' + this.score);
+
+            }
+         }
+
+         let s1 = new Student('Sơn',25,10);
+         let s2 = new Student('Vũ',29,9);
+         let s3 = new Student('Hùng',19,8);
+         s1.f2();
+         s2.f2();
+        
+    </script>
+</body>
+</html>

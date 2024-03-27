@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class SP {
+            constructor(x,y,z,v) {
+                this.id = x ;
+                this.name = y ;
+                this.price = z ;
+                this.quantity = v ;
+
+            }
+            getInfor() {
+                alert(this.id + ',' + this.name + "," + this.price + ',' + this.quantity);
+
+            }
+        }
+            let s1 = new SP('M123','XoongInox',120000,100);
+            let s2 = new SP('M113',' Nồi Inox',60000,100)
+             s1.getInfor();
+             s2.getInfor();
+    </script>
+</body>
+</html>

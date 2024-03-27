@@ -6,45 +6,36 @@
     <title>Document</title>
 </head>
 <body>
-<style>
-    
-</style>
-    <img src="https://cdn.britannica.com/68/195168-050-BBAE019A/football.jpg" alt="" id="concac" style="width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 700px;
-    left: 500px;
-    right: 300px;">
-    <button onclick="phai()">Sang Phải</button>
-    <button onclick="trai()">Sang Trái</button>
-    <button onclick="len()">Lên Trên</button>
-    <button onclick="xuong()">Xuống Dưới</button>
+    <img id="zed" src="https://cdn.britannica.com/68/195168-050-BBAE019A/football.jpg" alt="" style="width: 200px; height: 200px;position: absolute; top: 100px; left: 100px;">
+    <button onclick="right()">Right</button>
+    <button onclick="left()">Left</button>
+    <button onclick="up()">Up</button>
+    <button onclick="down()">Down</button>
     <script>
-        function phai() {
-         let a = document.getElementById('concac');
-         a.style.left = parseInt(a.style.left) + 30 + 'px'
+
+        let a = document.getElementById('zed');
+           
+        function right() {
+            
+            a.style.left = parseInt(a.style.left) + 20 + 'px' ;
+
         }
-        function trai() {
-            let b = document.getElementById('concac');
-         b.style.left = parseInt(b.style.left) - 30 + 'px'
+        function left() {
+            
+            a.style.left = parseInt(a.style.left) - 20 + 'px' ;
+
         }
-        function len() {
-            let c = document.getElementById('concac');
-         c.style.top = parseInt(c.style.top) - 30 + 'px'
+        function up() {
+            
+            a.style.top = parseInt(a.style.top) - 20 + 'px' ;
+
         }
-        function xuong() {
-            let d = document.getElementById('concac');
-         d.style.top = parseInt(d.style.top) + 30 + 'px'
+        function down() {
+            
+            a.style.top = parseInt(a.style.top) + 20 + 'px' ;
+
         }
-        let speedX = 1
-        setInterval(()=>{
-            let a = document.getElementById('concac');
-         a.style.left = parseInt(a.style.left) + speedX + 'px'
-         if(parseInt(a.style.left) >= window.innerWidth - a.clientWidth - 100 || parseInt(a.style.left) <=0 ){
-            speedX = -speedX
-         }
-        },1)
-    
+       
         
     </script>
 </body>

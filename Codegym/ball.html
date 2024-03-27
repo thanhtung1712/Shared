@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <im id="zed" src="https://cdn.britannica.com/68/195168-050-BBAE019A/football.jpg" alt="" style="height: 100px; width: 100px; left: 100px; top: 100px;">
+    <script>
+        let a = document.getElementById('zed');
+           
+           function right() {
+               
+               a.style.left = parseInt(a.style.left) + 20 + 'px' ;
+   
+           }
+           function left() {
+               
+               a.style.left = parseInt(a.style.left) - 20 + 'px' ;
+   
+           }
+           function up() {
+               
+               a.style.top = parseInt(a.style.top) - 20 + 'px' ;
+   
+           }
+           function down() {
+               
+               a.style.top = parseInt(a.style.top) + 20 + 'px' ;
+   
+           }
+           let speedX = 1;
+           setInterval(() => {
+               let xx = document.getElementById('zed');
+               xx.style.left = parseInt(xx.style.left ) + speedX + "px";
+               if (parseInt(xx.style.left ) >= window.innerWidth -100 ||
+                   parseInt(xx.style.left) <= 0) {
+                   speedX = -speedX;
+               }
+           },10)
+    </script>
+</body>
+</html>
