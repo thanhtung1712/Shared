@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đuổi Hình Bắt Chữ</title>
+    <style>
+        body {
+            text-align: center;
+            background-size: cover;
+            position: relative;
+        }
+        #Tbao {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            position: absolute;
+            top: 110%;
+            left: 48%;
+            
+        }
+    </style>
+</head>
+<body>
+    <p><img src="" alt="Ảnh để đoán" id="image" style="width: 450px;"></p>
+    <input type="text" id="input1" >
+    <button id="doan">Đoán</button>
+    <p>Thời gian còn lại: <span id="timer">30</span> giây</p>
+
+    <div id="Tbao">
+        <p id="message"></p>
+    </div>
+
+    <script>
+        let listImg = [
+            { url: 'https://cdn.tuoitre.vn/thumb_w/730/471584752817336320/2023/10/1/cau-1-1696141493743313017421.jpg', answer: "quan trọng" },
+            { url: 'https://cdn.tuoitre.vn/thumb_w/730/471584752817336320/2023/10/1/cau-2-1696141493745693271606.jpg', answer: "phản cảm" },
+            { url: 'https://cdn.tuoitre.vn/thumb_w/730/471584752817336320/2023/10/1/cau-3-1696141493746877316992.jpg', answer: "thách thức" },
+            { url: 'https://cdn.tuoitre.vn/thumb_w/730/471584752817336320/2023/9/15/bo-dao-nha-1-1694746887855148085712.jpg', answer: "bồ đào nha" },
+            { url: 'https://cdn.tuoitre.vn/thumb_w/730/471584752817336320/2023/9/15/nhat-ban-1-16947468878591196704175.jpg', answer: "nhật bản" }
+        ];
+
+        let Img1 = 0;
+        let answer = "";
+        let time = 30;
+        let time3;
+
+        let img2 = document.getElementById("image");
+        let answer1 = document.getElementById("input1");
+        let doan = document.getElementById("doan");
+        let time2 = document.getElementById("timer");
+        let tbao1 = document.getElementById("message");
+
+        function nextImg() {
+            img2.src = listImg[Img1].url;
+            answer = listImg[Img1].answer;
+            answer1.value = "";
+        }
+        nextImg();
+        
+        function checkGuess() {
+            let guess = answer1.value.trim().toLowerCase();
+            if (guess === answer) {
+                Img1 = (Img1 + 1) % listImg.length;
+                nextImg();
+                tbao1.textContent = "Chính cmn xác rồi b êi,thử câu này nhé";
+            } else {
+                tbao1.textContent = "Sai rồi má !";
+            }
+        }
+
+        function Time1() {
+            time3 = setInterval(updateTimer, 1000);
+        }
+        
+        Time1();
+        function updateTimer() {
+            time= time -1;
+            time2.textContent = time;
+            if (time <= 0) {
+                clearInterval(time3);
+                gameOver();
+            }
+        }
+
+        function gameOver() {
+            tbao1.textContent = "Hết thời gian! f5 để chơi lại nhé";
+            answer1.disabled = true;
+            doan.disabled = true;
+            document.body.style.backgroundImage = "url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExYWs5cXYwbXQ0ZGx1MzljN2hibW1mejIyNjJreGs0cnVhbWk5MmpndCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/OPU6wzx8JrHna/giphy.gif')";
+        }
+
+        doan.onclick = checkGuess;
+
+
+       
+    </script>
+</body>
+</html>
